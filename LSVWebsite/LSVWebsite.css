@@ -1,0 +1,758 @@
+@font-face {
+    font-family: "League Spartan";
+    src: url(./LeagueSpartan-Bold.otf);
+}
+
+body {
+    background-color: white;
+    font-family: 'PT Sans', sans-serif;
+    overflow-x: hidden;
+    --mainColor: #0bb67d;
+    /* #23ca44, war die Farbe die zu grell war */
+    
+}
+/*alles was den header betrifft + das Logo in diesem Abschnitt------------------------------------------------------------------------------------- */
+header {
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 2%; 
+    color: white; 
+    letter-spacing: 0.1em;
+    position: relative; 
+    /* background-image: linear-gradient(to right, #0ee038, #05af27);   */
+    background-image: linear-gradient(to right, #07ca6f, #0d8d62); 
+    padding: 50px;
+    font-family: "League Spartan", serif;
+    font-size: 2em;
+    -moz-box-shadow:  0px 10px 8px #ccc;
+    -webkit-box-shadow:  0px 10px 8px #ccc;
+    box-shadow: 0px 10px 8px #ccc;
+    z-index: 1;
+    animation: 1s headSlideIn 1;
+    margin-left: 8px;
+}
+
+@keyframes headSlideIn {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.headerText:visited {
+    color: white !important;
+    text-decoration: none;
+}
+
+.headerText:link {
+    text-decoration: none;
+    color: white;
+}
+
+.headerText:hover {
+    color: rgba(156, 156, 156);    
+}
+/* a:hover {
+    color: rgba(156, 156, 156); 
+} */
+#headerLorem {
+    visibility: hidden;
+}
+/* logo styling -------------------------------------------------------------------------------------*/
+#logoSpace {
+    width: 20%;
+    position: absolute;
+    height: 13rem;
+    width: 13rem;
+    z-index: 2;
+    top: -1%;
+    display: block;
+    left: 42%;
+    border-radius: 100%;
+    background-color: white;
+    /* box-shadow: inset -5px -5px 10px 2px #ccc; */
+    background-image: url("./VistaLogo.png"); 
+    background-position: 53% 38%; 
+    background-repeat: no-repeat; 
+    background-size: 140%;
+    animation: 1s logoIn 1, spin 1s 1;
+}
+
+@keyframes logoIn {
+    0% {
+        top: -25%;
+    }
+    100% {
+        top: -1%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Überschriften -------------------------------------------------------------------------------------*/
+
+.nameBanner {
+    font-family: "League Spartan", serif;
+    color: var(--mainColor);
+    width: 100%; 
+    font-size: 3em;
+    letter-spacing: 1em;
+    text-align: center;
+    margin: 1em;
+    margin-bottom: 0.3em; 
+    animation: 1s sliderIn 1;
+}
+
+.zwischenÜberschrift {
+    color: var(--mainColor);
+    font-size: 1.8em;
+    font-family: "League Spartan", serif;
+    letter-spacing: 0.3em;
+    text-align: center;
+    /* font-style: italic;  */
+    margin: 0.1em; 
+    width: 100%; 
+    margin-bottom: 1%;
+    animation: 1s sliderIn 1;
+}
+
+.projektZwischenÜberschrift {
+    color: var(--mainColor);
+    font-size: 1.8em;
+    font-family: "League Spartan", serif;
+    letter-spacing: 0.3em;
+    text-align: center;
+    /* font-style: italic;  */
+    margin: 0.1em; 
+    width: 100%; 
+    margin-bottom: 1%;
+    animation: 1s sliderIn 1;
+}
+
+/*Buttons, die einen zum Abschnitt AHS und BMHS bringen. -------------------------------------------------------------------------------------*/
+
+#buttonContainer {
+    display: inline-block;
+    width: 30%; 
+    margin-bottom: 3%;
+}
+
+.SchooltypeButton {
+    width: 50%; 
+    position: relative; 
+    top: 8%; 
+    padding: 50px;
+    margin: 20%;
+    margin-top: 8%;
+    text-align: center;
+    font-size: 2em;
+    font-family: "League Spartan", serif;
+    color: white;
+    letter-spacing: 0.1em; 
+    background-image: linear-gradient(to right, #07ca6f, #0d8d62); 
+    border-radius: 15px 50px 30px;
+    float: left;
+    cursor: pointer;
+}
+
+.SchooltypeButton:hover {
+    color: lightgrey;
+}
+
+#AHSButton {
+    animation: 2s ahsIn 1;
+}
+
+#BMHSButton {
+    animation: 2s bmhsIn 1;
+}
+
+@keyframes ahsIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     
+    }
+}
+
+@keyframes bmhsIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Slider -------------------------------------------------------------------------------------- */
+#frontWrapper {
+    display: flex;
+    padding: 2%;
+    /* overflow: hidden; */
+    margin-bottom: 5%;
+}
+#sliderContainer {
+    display: block;
+    width: 70%;
+    height: 450px;
+    position: relative;
+    margin-bottom: 0; 
+    margin-top: 3%;
+    float: left;
+
+}
+
+#slider {
+    display: inline-block;
+    height: 400px;
+    width: 400px;
+    border: 3px solid var(--mainColor); 
+    border-radius: 100%; 
+    margin-left: 15%;
+    margin-bottom: 0; /*experiment */
+    animation: 1s sliderIn 1;
+    overflow: hidden; 
+    transition: border-color 0.5s;
+    cursor: pointer;
+}
+
+#slider:hover {
+    border-color: #03831c;
+}
+
+#sliderPicture {
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover; 
+}
+
+#slideButton {
+    display: inline-block;
+    height: 10rem;  
+    width: auto; 
+    margin-left: 5%;
+    margin-bottom: 45%; 
+    vertical-align: middle; 
+    animation: 1s sliderIn 1;
+    transition: margin-left 0.3s;
+    cursor: pointer;
+}
+
+#slideButton:hover {
+    margin-left: 6%; 
+}
+
+#kurzBeschreibung {
+    display: block;
+    margin-top: -28%; 
+    margin-left: 15%;
+    width: 60%; 
+    padding-left: 1em;
+    border-left: 3px solid var(--mainColor); 
+    border-radius: 2px; 
+    animation: 1s sliderIn 1;
+    cursor: pointer;
+    transition: border-color 0.5s;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.3em;
+}
+
+#kurzBeschreibung:link {
+    color: black;
+    text-decoration: none;
+}
+
+#kurzBeschreibung:hover {
+    border-color: #038f1f;
+    color: rgba(156, 156, 156); 
+}
+
+span {
+    color: var(--mainColor);
+    font-style: bold;
+    font-size: 1.1em;
+    
+}
+
+@keyframes sliderIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+hr {
+    border-top: none;
+    border-left: solid 2px var(--mainColor);
+    border-right: solid 2px var(--mainColor);
+    background-color: var(--mainColor); 
+    width: 75%; 
+    color: var(--mainColor); 
+    height: 1px; 
+    border-radius: 10%;
+    animation: 1s sliderIn 1;
+}
+
+/* Video --------------------------------------------------------------------------------------------------------------------- */
+
+#videoContainer {
+    text-align: center;
+}
+
+video {
+    border: solid 3px var(--mainColor);
+    border-radius: 15px;
+}
+
+ /* Visitenkarten, Personenbeschreibungen------------------------------------------------------------------------------------- */
+ .Visitenkarte {
+    display: flex;
+    border: solid 3px var(--mainColor);
+    margin-top: 1.5em; 
+    padding-right: 1em;
+    padding: 0;
+    border-radius: 10px;
+    margin-bottom: 3em;
+    transition: box-shadow 0.5s;
+    overflow: hidden;
+}
+
+.Visitenkarte:hover {
+    box-shadow: 5px 8px 8px #ccc;
+}
+
+.imageContainer {
+    display: inline;
+}
+
+.textContainer {
+    display: inline;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+.projektText {
+    line-height: 1.5em;
+}
+
+.longDesc {
+    padding: 1em;
+}
+
+.felixText {
+    margin-bottom: 0;
+}
+
+.projektLink {
+    color: var(--mainColor);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-style: bold;
+}
+
+.projektLink:hover {
+    color: #0a8058;
+}
+
+
+
+.descPic {
+    height: 100%; 
+    width: 200px;
+    border-right: 2px solid var(--mainColor);
+}
+
+h3 {
+    font-family: "League Spartan", serif;
+    letter-spacing: 0.1em;
+    color: var(--mainColor);
+    font-weight: bold; 
+    margin-top: 16px; /*experiment */
+}
+
+#BMHSTrennung {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: "League Spartan", serif;
+    padding-left: 0;
+}
+
+#AHSTrennung {
+    font-family: "League Spartan", serif;
+    padding-left: 0;
+}
+/* footer------------------------------------------------------------------------------------- */
+
+footer {
+    width: auto; 
+    padding: 25px;
+    background-image: linear-gradient(to right,  #07ca6f, #0d8d62);
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 8%;
+    display: flex;
+    text-align: right; 
+    align-items: flex-start;
+    margin-bottom: 0;
+}
+
+.footerText {
+    margin-left: 15px;
+}
+
+.footerText:link {
+    text-decoration: none; 
+    color: white;
+}
+
+/* Impressum-Seite -------------------------------------------------------------------------------------*/
+
+.impressumContainer {
+    text-align: center;
+    margin-right: 25%; 
+    margin-left: 25%; 
+}
+
+#impressumText {
+    border: solid 3px var(--mainColor);
+    border-radius: 10px;
+    padding: 15px; 
+    font-family: "Mukta", sans-serif;
+}
+/* making mobile Only Elements not show on the regular Website */
+#menuIcon {
+    display: none;
+}
+
+#menu {
+    display: none;
+}
+
+.menuActive {
+    transition: left 1s;
+    left: 1%;
+}
+
+
+/* Kontakt-Seite -------------------------------------------------------------------------------------*/
+
+#kontaktBanner {
+    margin-top: 5%;
+    font-family: "League Spartan", serif;
+}
+
+#kontaktContainer {
+    display: flex;
+    justify-content: space-between;
+    justify-self:last baseline;
+    text-align: center;
+    margin-top: 5%;
+    width: 75%;
+    margin-left: 12.5%;
+    padding-bottom: 8%;
+ }
+.kontaktLinkContainer {
+    display: inline-block;
+ }
+
+.MediaIcon {
+    display: inline-block;
+    width: 150px;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+/* Projektseite */
+
+li {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+}
+.listEye {
+    height: 2em; 
+    width: auto;
+    vertical-align: middle;
+    display: inline;
+}
+
+/* Über uns - Seite: */
+
+#gruppenFotoContainer {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: 1s sliderIn 1;
+    
+}
+
+#gruppenFoto {
+    float: left;
+    border-radius: 100%;
+    width: 30%;
+    border: 3px solid var(--mainColor);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#teamDescContainer {
+    display: flex;
+    justify-content: center;
+    animation: 1s sliderIn 1;
+}
+
+
+#teamDesc {
+    width: 50%;
+    border-left: 3px solid var(--mainColor);
+    padding-left: 1em;
+    font-size: 1.2em;
+}
+
+
+/* Responsive Design  -------------------------------------------------------------------------------------*/
+/* regarding the header */
+@media only screen and (max-width: 480px) {
+    html {
+        overflow-x: hidden;
+    } 
+
+    body {
+        overflow-x: hidden;
+    }
+    
+    header {
+        padding: 10px;
+        font-size: 1em;
+        min-height: 30px;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .headerText {
+        display: none;
+    }
+
+    #logoSpace {
+        width: 4.5rem; 
+        height: 4.5rem;
+        top: 0;
+    }
+
+    #menuIcon {
+        display: inline-block;
+        height: 2rem; 
+        width: auto;
+        vertical-align: middle;
+    }
+    /* Überschriften */
+    .nameBanner {
+        font-size: 1.5em; 
+        letter-spacing: 0.3em;
+        margin-top: 20px;
+        margin-left: 5px;
+        margin-bottom: 7px;
+    }
+
+    #subHeader {
+        font-size: 0.7em; 
+        letter-spacing: 0.1em;
+        padding-left: 0;
+    }
+
+    .projektZwischenÜberschrift {
+        font-size: 1.7em; 
+        letter-spacing: 0.1em;
+        padding-left: 0;
+    }
+
+    #buttonContainer {
+        display: none;
+    }
+
+    #sliderContainer {
+        width: 100%;
+        text-align: center;
+    }
+
+    #slider {
+        margin-left: 0; 
+        height: 200px; 
+        width: 200px; 
+    }
+
+    #slideButton {
+        margin-bottom: 25%;
+        height: 8rem;
+    }
+
+    #kurzBeschreibung {
+        font-size: 14px;
+        text-align: left;
+        margin-bottom: 1em;
+    }
+
+    video {
+        height: auto;
+        width: 95%;
+        margin-top: 30px;
+    }
+
+    .Visitenkarte {
+        display: block;
+    }
+
+    .LongDesc {
+        font-size: 0.9em;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-bottom: 0;
+      
+    }
+
+    .imageContainer {
+        padding: 0;
+    }
+
+    .descPic {
+        width: 100%;
+        height: auto;
+    }
+
+    #menu {
+        position: absolute;
+        display: block;
+        width: 60%; 
+        right: 100%;
+        height: 100%;
+        z-index: 3; 
+        border-right: 3px solid var(--mainColor);
+        background-color: white; 
+        
+    }
+
+    .menuItem {
+        padding: 5px;
+        border: 2px solid var(--mainColor); 
+        border-radius: 10px;
+        display: block;
+        margin: 6px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: black;
+    }
+
+    .menuItem:link {
+        text-decoration: none;
+    }
+
+    .menuItem:active {
+        background-color: rgba(255,255,255, 0.8);
+    }
+
+    #menuHeader {
+        text-align: center;
+        font-size: 23px;
+    } 
+
+    .KandiName {
+        padding-left: 0.8em;
+    }
+
+    /* Kontakt-Seite --------------------------------------------------------------------------------- */
+
+    #kontaktContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: center;
+        text-align: center;
+        padding-bottom: 10rem;
+    }
+
+    .MediaIcon {
+        display: block;
+        width: 7rem;
+        margin-top: 40%;
+        margin-left: 70%;  
+        
+    }
+
+    #kontaktBanner {
+        padding: 0.1em;
+        font-size: 1em;
+    }
+    
+    @keyframes logoIn {
+        0% {
+            top: -25%;
+        }
+        100% {
+            top: 0%;
+        }
+    }
+/* Hier war die änderung mit minheight*/
+    #gruppenFoto {
+        width: 100%;
+        min-height: auto;
+        max-height: 398px;
+        border-radius: 0%;
+        border: none; 
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        object-fit:fill;
+    }
+
+    #teamDesc {
+        width: 100%;
+        text-align: left;
+    }
+
+    #impressumText {
+        width: 100%;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .impressumContainer {
+        margin: 0;
+        width: 80%;
+        
+    }
+
+    #impressumContainerContainer {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .listEye {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 387px) and (max-width: 480px) {
+    #slideButton {
+        margin-right: 6%;
+    }
+    
+    #slider {
+        margin-left: 1%;
+    }
+} 
